@@ -1,0 +1,98 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Exercises</title>
+</head>
+<body>
+
+    
+    <h1 id="marks">Marks: 50</h1>
+
+    <button id="addBtn">Add Bonus Marks</button>
+    <button id="deductBtn">Deduct Marks</button>
+
+    <hr>
+
+    
+    <h1 id="age">Age: 18</h1>
+
+    <button id="birthdayBtn">Birthday</button>
+    <button id="backBtn">Go Back One Year</button>
+
+    <hr>
+
+     
+
+    <h1 id="status">Bulb is OFF</h1>
+
+    <button id="onBtn">Turn ON</button>
+    <button id="offBtn">Turn OFF</button>
+
+    <script>
+
+    
+
+        let marks = 50;
+
+        let marksHeading = document.querySelector("#marks");
+        let addButton = document.querySelector("#addBtn");
+        let deductButton = document.querySelector("#deductBtn");
+
+        function addMarks() {
+            marks += 5;
+            marksHeading.innerHTML = "Marks: " + marks;
+        }
+
+        function deductMarks() {
+            marks -= 5;
+            marksHeading.innerHTML = "Marks: " + marks;
+        }
+
+        addButton.addEventListener("click", addMarks);
+        deductButton.addEventListener("click", deductMarks);
+
+
+        
+
+        let age = 18;
+
+        let ageHeading = document.querySelector("#age");
+        let birthdayButton = document.querySelector("#birthdayBtn");
+        let backButton = document.querySelector("#backBtn");
+
+        function incrementAge() {
+            age++;
+            ageHeading.innerHTML = "Age: " + age;
+        }
+
+        function decrementAge() {
+            age--;
+            ageHeading.innerHTML = "Age: " + age;
+        }
+
+        birthdayButton.addEventListener("click", incrementAge);
+        backButton.addEventListener("click", decrementAge);
+
+
+
+        let heading = document.querySelector("#status");
+
+        let onButton = document.querySelector("#onBtn");
+        let offButton = document.querySelector("#offBtn");
+
+        function turnOn() {
+            heading.innerHTML = "Bulb is ON";
+        }
+
+        function turnOff() {
+            heading.innerHTML = "Bulb is OFF";
+        }
+
+        onButton.addEventListener("click", turnOn);
+        offButton.addEventListener("click", turnOff);
+
+    </script>
+
+</body>
+</html>

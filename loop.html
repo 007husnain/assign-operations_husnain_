@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For Loop Exercises</title>
+</head>
+<body>
+
+    <h1>For Loop Exercises</h1>
+
+    <!-- Exercise 1 -->
+    <h2>Exercise 1 - Multiplication Table</h2>
+
+    <input type="number" id="tableNumber" placeholder="Table Number">
+    <input type="number" id="tableTimes" placeholder="Number of Times">
+    <button onclick="showTable()">Show Table</button>
+
+    <p id="tableResult"></p>
+
+    <hr>
+
+    <!-- Exercise 2 -->
+    <h2>Exercise 2 - Even Numbers</h2>
+
+    <input type="number" id="evenNumber" placeholder="Enter Number">
+    <button onclick="showEven()">Show Even Numbers</button>
+
+    <p id="evenResult"></p>
+
+    <hr>
+
+    <!-- Exercise 3 -->
+    <h2>Exercise 3 - Countdown</h2>
+
+    <input type="number" id="countNumber" placeholder="Enter Number">
+    <button onclick="countDown()">Countdown</button>
+
+    <p id="countResult"></p>
+
+    <hr>
+
+    <!-- Exercise 4 -->
+    <h2>Exercise 4 - Sum of Numbers</h2>
+
+    <input type="number" id="sumNumber" placeholder="Enter Number">
+    <button onclick="findSum()">Find Sum</button>
+
+    <p id="sumResult"></p>
+
+    <hr>
+
+    <!-- Exercise 5 -->
+    <h2>Exercise 5 - Number Pattern</h2>
+
+    <input type="number" id="patternNumber" placeholder="Enter Number">
+    <button onclick="showPattern()">Show Pattern</button>
+
+    <pre id="patternResult"></pre>
+
+<script>
+
+function showTable() {
+
+    let number = document.querySelector("#tableNumber").value;
+    let times = document.querySelector("#tableTimes").value;
+
+    let result = "";
+
+    for(let i = 1; i <= times; i++) {
+        result += number + " x " + i + " = " + (number * i) + "<br>";
+    }
+
+    document.querySelector("#tableResult").innerHTML = result;
+}
+
+function showEven() {
+
+    let number = document.querySelector("#evenNumber").value;
+
+    let result = "";
+
+    for(let i = 1; i <= number; i++) {
+
+        if(i % 2 == 0) {
+            result += i + " ";
+        }
+
+    }
+
+    document.querySelector("#evenResult").innerHTML = result;
+}
+
+function countDown() {
+
+    let number = document.querySelector("#countNumber").value;
+
+    let result = "";
+
+    for(let i = number; i >= 1; i--) {
+        result += i + "<br>";
+    }
+
+    document.querySelector("#countResult").innerHTML = result;
+}
+
+function findSum() {
+
+    let number = document.querySelector("#sumNumber").value;
+
+    let sum = 0;
+
+    for(let i = 1; i <= number; i++) {
+        sum = sum + i;
+    }
+
+    document.querySelector("#sumResult").innerHTML = "Sum = " + sum;
+}
+
+function showPattern() {
+
+    let number = document.querySelector("#patternNumber").value;
+
+    let result = "";
+
+    for(let i = 1; i <= number; i++) {
+
+        for(let j = 1; j <= i; j++) {
+            result += j;
+        }
+
+        result += "\n";
+    }
+
+    document.querySelector("#patternResult").textContent = result;
+}
+
+</script>
+
+</body>
+</html>

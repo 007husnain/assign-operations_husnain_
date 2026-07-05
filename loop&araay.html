@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping List</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f2f2f2;
+            margin-top: 40px;
+        }
+
+        h1{
+            color: darkblue;
+        }
+
+        input{
+            padding: 10px;
+            width: 220px;
+            font-size: 16px;
+        }
+
+        button{
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+
+        #list{
+            width: 300px;
+            margin: 20px auto;
+            text-align: left;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        p{
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Shopping List</h1>
+
+<input type="text" id="itemInput" placeholder="Enter Item">
+<button onclick="addItem()">Add Item</button>
+
+<div id="list"></div>
+
+<p id="total"></p>
+
+<script>
+
+let shoppingList = [
+    "Milk",
+    "Bread",
+    "Eggs",
+    "Rice",
+    "Sugar"
+];
+
+function showList(){
+
+    let output = "";
+
+    for(let i = 0; i < shoppingList.length; i++){
+        output += (i + 1) + ". " + shoppingList[i] + "<br>";
+    }
+
+    document.getElementById("list").innerHTML = output;
+
+    document.getElementById("total").innerHTML =
+    "Total Items: " + shoppingList.length;
+
+}
+
+function addItem(){
+
+    let newItem = document.getElementById("itemInput").value;
+
+    if(newItem != ""){
+
+        shoppingList.push(newItem);
+
+        showList();
+
+        document.getElementById("itemInput").value = "";
+
+    }
+
+}
+
+showList();
+
+</script>
+
+</body>
+</html>
